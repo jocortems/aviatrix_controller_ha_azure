@@ -2,11 +2,11 @@
 
 ## Description
 
-This Terraform module:
-
 ### Note:
 
 This Terraform module has some modifications to the original module posted in the official AviatrixSystems Github repository [here](https://github.com/AviatrixSystems/Azure_Controller_HA). Mainly this module doesn't deploy a service principal, it requires the Service Principal to be created, and to pass the Serivce Principal and Secret as variables; additionally, it uses the latest Azure Terraform provider resources, and automatically adds the IP Address of the system that runs this code to the NSG of the Aviatrix Controller. It also adds logic to the null_resource that deploys the Azure Function to try deploying up to 5 times, this is needed because in the original code the script results in error *"Timed out waiting for SCM to update Environment Settings"* and requires to run `Terraform apply` twice. See [here](https://github.com/Azure/azure-functions-core-tools/issues/1863) for more details on this issue
+
+This Terraform module:
 
 - Supports Azure controller deployment with only 6.5 and above versions.
 - Creates an Aviatrix Controller in Azure using scale set and load balancer.
