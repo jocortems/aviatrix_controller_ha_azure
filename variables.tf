@@ -101,6 +101,7 @@ variable "network_security_group_controller_name" {
 variable "aviatrix_controller_security_group_allowed_ips" {
   type        = list(string)
   description = "Incoming cidr for security group used by controller"
+  default = []
 }
 
 variable "controller_virtual_machine_size" {
